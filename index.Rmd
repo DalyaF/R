@@ -11,7 +11,7 @@ link-citations: yes
 github-repo: openscapes/series
 ---
 
- 
+
 
 # Introduction
 
