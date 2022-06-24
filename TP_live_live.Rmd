@@ -14,7 +14,6 @@ library(countrycode)
 
 ```{r }
 
-
 population<- read_delim("WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES_UN.csv", skip=16,  na="...")
 
 population<-read_excel("WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES_UN.xlsx", skip = 16, na="...") |>
