@@ -1,0 +1,576 @@
+# ANALYSE MONDIALE
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(readxl)
+library(countrycode)
+
+
+```
+
+## POPULATION 
+
+```{r }
+
+population<- read_delim("WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES_UN.csv", skip=16,  na="...")
+
+population<-read_excel("WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES_UN.xlsx", skip = 16, na="...") |>
+  select(1:3, Type,"1950":"2020" )  |>
+  pivot_longer(cols=5:75,
+               names_to ="annee",
+               values_to = "population") |>
+  mutate(population=population*1000) |>
+  rename(region=3)
+
+population_monde <-population |>
+  filter(Type=="World") |>
+  filter(annee >= 1961) |>
+  mutate(annee=(as.numeric(annee)))
+
+
+```
+
+```{r POPULATION GRAPHIQUE}
+
+# on ne filtre que les données du monde
+
+ggplot(population_monde) +
+  aes(annee, population) +
+  geom_point() +
+  geom_line(aes(group=1)) +
+  scale_x_continuous( trans='log10') +
+  scale_y_continuous(labels=function(x) {
+    format(x,scientific=TRUE,
+           big.mark=" ")
+  })+
+  theme(axis.text.x=element_text(size=12,
+                                 angle=45,
+                                 hjust=1,
+                                 vjust=1),
+        axis.text.y=element_text(size=12,
+                                 
+                                 hjust=1,
+                                 vjust=1),
+        strip.text.x=element_text(colour="black",
+                                  face="bold"),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=14,face="bold"))
+```
+
+## ENERGIE
+
+```{r }
+
+library(tidyselect)
+
+energy<-read_delim("owid-energy-data__OWID.csv")
+
+seqTp_energy <- energy |> 
+  select(1:3,contains("consumption")) |>
+  filter(year >= 1961 & year <= 2020) |> 
+  pivot_longer(cols=4:16,
+               names_to="type_energie",
+               values_to="consommation") |> 
+  mutate(types = case_when(str_detect(type_energie,"coal|gas|oil")~"fossil_fuel_consumption",
+                                 str_detect(type_energie,"nuclear|biofuel|hydro|other_renewable|solar|wind")~"low_carbon_consumption",
+                           TRUE~NA_character_)) |> 
+   mutate(sources_energy = case_when(str_detect(type_energie,"biofuel")~"biofuel",
+                                      str_detect(type_energie,"coal")~"coal",
+                                      str_detect(type_energie,"wind")~"wind",
+                                      str_detect(type_energie,"gas")~"gas",
+                                      str_detect(type_energie,"hydro")~"hydro",
+                                      str_detect(type_energie,"solar")~"solar",
+                                    str_detect(type_energie,"nuclear")~"nuclear",
+                                    str_detect(type_energie,"oil")~"oil",
+                                    str_detect(type_energie,"other_renewable")~"other_renewable_consumption"
+                                    ))
+
+
+```
+
+```{r ENERGIE GRAPHIQUE Types}
+energy_source<- seqTp_energy |> 
+  filter(country=="World") |> 
+  drop_na(types) |> 
+  rename(annee='year') 
+
+ggplot(energy_source )+
+  aes(annee,consommation,colour=sources_energy, fill=sources_energy)+
+  geom_col()+
+  facet_grid(~types)+
+     labs(x="Annee", y="Consommation (TWh)")+
+  theme(axis.text.x=element_text(size=14,
+                                 angle=45,
+                                 hjust=1,
+                                 vjust=1),
+        axis.text.y=element_text(size=14,
+                                 hjust=1,
+                                 vjust=1),
+        strip.text.x=element_text(colour="black",
+                                  face="bold"),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=14,face="bold"),
+     )
+
+
+
+```
+
+## NOURRITURE
+
+```{r NOURRITURE CHARGEMENT}
+
+guess_encoding("Production_Crops_Livestock_E_All_Data.csv")
+
+food<-read_delim("Production_Crops_Livestock_E_All_Data.csv",
+                 locale=locale(encoding="ISO-8859-1")) |> 
+  select(-ends_with("F")) |> 
+  pivot_longer(cols=Y1961:Y2020,
+               names_to="annee",
+               values_to="valeur") |> 
+  mutate(annee=parse_number(annee))
+
+```
+
+```{r GRAPHIQUE STAPLE FOOD}
+
+# on ne conserve que les monde, que la production (colonne Element) et que la nourriture de base (finissant par Total et Primary dans colonne Item)
+
+food_world<-food |> 
+  filter(Area=="World",
+         Element=="Production") |> 
+  filter(str_detect(Item,"Total")|str_detect(Item,"Primary"))
+
+ggplot(food_world)+
+  aes(annee,valeur,colour=Item)+
+  geom_point()+
+  geom_line()+
+  theme(axis.text.x=element_text(size=12,
+                                 angle=45,
+                                 hjust=1,
+                                 vjust=1),
+        axis.text.y=element_text(size=12,
+                                 hjust=1,
+                                 vjust=1),
+        strip.text.x=element_text(colour="black",
+                                  face="bold"),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=14,face="bold"))
+
+
+```
+
+
+
+# ANALYSE PAR CONTINENT
+## POPULATION
+```{r}
+# exploration des colonnes caractérisant la production
+
+population<-read_excel("WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES_UN.xlsx", skip = 16, na="...") |>
+  select(1:3, Type,"1950":"2020" )  |>
+  pivot_longer(cols=5:75,
+               names_to ="annee",
+               values_to = "population") |>
+  mutate(population=population*1000) |>
+  rename(region=3) |> 
+  filter(annee>=1961)
+
+population_continent<-population |>
+  select(annee, population, region) |> 
+  mutate(continent=countrycode(region, origin = "country.name", destination = "continent"))
+
+
+
+ggplot(population_continent |> 
+         mutate(annee=(as.numeric(annee))) |> 
+         drop_na(continent)) +
+  aes(annee, population,fill=continent) +
+  geom_col()+
+  scale_x_continuous( trans='log10') +
+  scale_y_continuous(labels=function(x) {
+    format(x,scientific=FALSE,
+           big.mark=" ")
+    
+  })
+
+
+```
+
+## ENERGIE
+```{r}
+energy_continent<- seqTp_energy |>
+  mutate(continent=countrycode(country, origin = "country.name", destination = "continent"))|>
+  rename(annee="year") |> 
+  mutate(annee=(as.numeric(annee))) |> 
+  drop_na(continent) |> 
+  drop_na(types)
+    
+#pour véréfier na dans continent
+test_continent <- energy_continent |> 
+  distinct(continent,country)
+  
+#vérifier les na dans types
+test_continent_types  <- energy_continent |> 
+  distinct(type_energie,sources_energy,types) 
+
+
+ggplot(energy_continent )+
+  aes(annee,consommation,fill=continent)+
+  geom_col()+
+  facet_grid(~types)+
+     labs(x="Annee", y="Consommation (TWh)")+
+  theme(axis.text.x=element_text(size=14,
+                                 angle=45,
+                                 hjust=1,
+                                 vjust=1),
+        axis.text.y=element_text(size=14,
+                                 hjust=1,
+                                 vjust=1),
+        strip.text.x=element_text(colour="black",
+                                  face="bold"),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=14,face="bold"))
+
+ggplot(energy_continent )+
+  aes(annee,consommation,fill=sources_energy)+
+  geom_col()+
+  facet_grid(~continent)+
+  labs(x="Annee", y="Consommation (TWh)")+
+  theme(axis.text.x=element_text(size=14,
+                                 angle=45,
+                                 hjust=1,
+                                 vjust=1),
+        axis.text.y=element_text(size=14,
+                                 hjust=1,
+                                 vjust=1),
+        strip.text.x=element_text(colour="black",
+                                  face="bold"),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=14,face="bold"))
+
+```
+
+## NOURRITURE
+```{r}
+
+food<-read_delim("Production_Crops_Livestock_E_All_Data.csv",
+                 locale=locale(encoding="ISO-8859-1")) |> 
+  select(-ends_with("F")) |> 
+  pivot_longer(cols=Y1961:Y2020,
+               names_to="annee",
+               values_to="Production_norriture") |> 
+  mutate(annee=parse_number(annee)) |> 
+  mutate(continent=countrycode(Area, origin = "country.name", destination = "continent")) |> 
+  drop_na(continent)
+
+food_continent <-food |> 
+  filter(Element=="Production") |> 
+  filter(str_detect(Item,"Total")|str_detect(Item,"Primary"))
+
+ggplot(food_continent)+
+  aes(annee,Production_norriture,colour=continent, fill=continent)+
+  geom_col()+
+  labs(x="Annee", y="Production de norriture (tonnes)")+
+  theme(axis.text.x=element_text(size=12,
+                                 angle=45,
+                                 hjust=1,
+                                 vjust=1),
+        axis.text.y=element_text(size=12,
+                                 hjust=1,
+                                 vjust=1),
+        strip.text.x=element_text(colour="black",
+                                  face="bold"),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=14,face="bold"))
+
+
+ggplot(food_continent )+
+  aes(annee,Production_norriture,fill=Item)+
+  geom_col()+
+  facet_grid(~continent)+
+  labs(x="Annee", y="Production de norriture (tonnes)")+
+  theme(axis.text.x=element_text(size=14,
+                                 angle=45,
+                                 hjust=1,
+                                 vjust=1),
+        axis.text.y=element_text(size=14,
+                                 hjust=1,
+                                 vjust=1),
+        strip.text.x=element_text(colour="black",
+                                  face="bold"),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=14,face="bold"))
+
+
+```
+# ANALYSE PAR PAYS
+
+## POPULATION
+```{r POPULATION CHARGEMENT}
+
+
+population<-read_excel("WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES_UN.xlsx", skip = 16, na="...") |>
+  select(1:3, Type,"1950":"2020" )  |>
+  pivot_longer(cols=5:75,
+               names_to ="annee",
+               values_to = "population") |>
+  mutate(population=population*1000) |>
+  rename(region=3)
+
+population_country<-population |>
+  select(annee, population, region) |>
+   mutate(country=countrycode(region, origin = "country.name", destination = "country.name")) |> 
+  drop_na(country) |> 
+  mutate(annee=(as.numeric(annee))) |> 
+  filter(annee == 2020) 
+
+
+#la carte 
+world_map <- map_data("world") |> 
+  mutate(country=countrycode(region, origin = "country.name", destination = "country.name"))
+
+#fusionner les données lat/long avec les données gapminder
+
+population_carte <- world_map |>
+  mutate(group=factor(group),
+         region=factor(region)) |> 
+  full_join(population_country,by="country") 
+
+test_population <- population_country |> 
+  distinct(country)
+
+# carte choroplethe
+
+ggplot(population_carte)+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=population),colour="black")
+
+
+
+```
+
+## ENERGIE
+
+```{r}
+#Partie Energie
+
+#la carte 
+world_map <- map_data("world") |> 
+  mutate(country=countrycode(region, origin = "country.name", destination = "country.name")) 
+
+energy<-read_delim("owid-energy-data__OWID.csv")
+
+seqTp_energy <- energy |> 
+  select(1:3,contains("consumption")) |>
+  filter(year >= 1961 & year <= 2020) |> 
+  pivot_longer(cols=4:16,
+               names_to="type_energie",
+               values_to="consommation") |> 
+  mutate(types = case_when(str_detect(type_energie,"coal|gas|oil")~"fossil_fuel_consumption",
+                                 str_detect(type_energie,"nuclear|biofuel|hydro|other_renewable|solar|wind")~"low_carbon_consumption",
+                           TRUE~NA_character_)) |> 
+   mutate(sources_energy = case_when(str_detect(type_energie,"biofuel")~"biofuel",
+                                      str_detect(type_energie,"coal")~"coal",
+                                      str_detect(type_energie,"wind")~"wind",
+                                      str_detect(type_energie,"gas")~"gas",
+                                      str_detect(type_energie,"hydro")~"hydro",
+                                      str_detect(type_energie,"solar")~"solar",
+                                    str_detect(type_energie,"nuclear")~"nuclear",
+                                    str_detect(type_energie,"oil")~"oil",
+                                    str_detect(type_energie,"other_renewable")~"other_renewable_consumption"
+                                    )) 
+energy_country<- seqTp_energy |>
+  rename(annee="year") |> 
+  mutate(annee=(as.numeric(annee))) |> 
+  drop_na(types)|> 
+  mutate(iso_code=countrycode(country, origin = "country.name", destination = "iso3c")) |> 
+  drop_na(iso_code) |> 
+  mutate(country=countrycode(iso_code, origin = "iso3c", destination = "country.name")) 
+
+  
+test_energy_country <- energy_country |> 
+  distinct(country)
+
+#fusionner les données lat/long avec les données gapminder
+
+energy_carte <- world_map |>
+  mutate(group=factor(group),
+         region=factor(region)) |> 
+  full_join(energy_country,by="country")
+
+# carte choroplethe
+
+#type = low_carbon_consumption
+ggplot(energy_carte |> 
+         filter(annee==2015) |> 
+         filter(types =="low_carbon_consumption"))+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=consommation),colour="black")
+
+
+```
+
+
+### Distribution de l'énergie de type fossil_fuel par pays en 2015
+
+```{r}
+#type = fossil_fuel_consumption
+ggplot(energy_carte |> 
+         filter(annee==2015) |> 
+         filter(types =="fossil_fuel_consumption"))+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=consommation),colour="black")
+
+```
+
+### Distribution de l'énergie d'origine biofuel par pays en 2015
+
+```{r}
+
+#source = biofuel
+ggplot(energy_carte |> 
+         filter(annee==2015) |> 
+         filter(sources_energy =="biofuel"))+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=consommation),colour="black")
+
+```
+
+### Distribution de l'énergie d'origine charbone par pays en 2015
+
+```{r}
+
+#source = coal
+ggplot(energy_carte |> 
+         filter(annee==2015) |> 
+         filter(sources_energy =="coal"))+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=consommation),colour="black")
+```
+
+
+### Distribution de l'énergie d'origine gaz par pays en 2015
+
+```{r}
+#source = gas
+ggplot(energy_carte |> 
+         filter(annee==2015) |> 
+         filter(sources_energy =="gas"))+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=consommation),colour="black")
+```
+
+
+### Distribution de l'énergie d'origine hydro par pays en 2015
+
+```{r}
+#source = hydro
+ggplot(energy_carte |> 
+         filter(annee==2015) |> 
+         filter(sources_energy =="hydro"))+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=consommation),colour="black")
+```
+
+# Energie par sources 2
+
+
+### Distribution de l'énergie d'origine nuclear par pays en 2015
+
+
+```{r}
+#source = nuclear
+ggplot(energy_carte |> 
+         filter(annee==2015) |> 
+         filter(sources_energy =="nuclear"))+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=consommation),colour="black")
+```
+
+### Distribution de l'énergie d'origine oil par pays en 2015
+
+```{r}
+#source = 	oil
+ggplot(energy_carte |> 
+         filter(annee==2015) |> 
+         filter(sources_energy =="oil"))+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=consommation),colour="black")
+```
+
+### Distribution de l'énergie de source solar par pays en 2015
+
+```{r}
+#source = 	solar
+ggplot(energy_carte |> 
+         filter(annee==2015) |> 
+         filter(sources_energy =="solar"))+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=consommation),colour="black")
+```
+
+### Distribution de l'énergie de source wind par pays en 2015
+
+```{r}
+#source = 		wind
+ggplot(energy_carte |> 
+         filter(annee==2015) |> 
+         filter(sources_energy =="wind"))+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=consommation),colour="black")
+```
+
+### Distribution de l'énergie de source other_renewable_consumption par pays en 2015
+
+```{r}
+#source = other_renewable_consumption
+ggplot(energy_carte |> 
+         filter(annee==2015) |> 
+         filter(sources_energy =="other_renewable_consumption"))+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=consommation),colour="black")
+```
+
+
+## NOURRITURE
+```{r}
+#Partie food
+food<-read_delim("Production_Crops_Livestock_E_All_Data.csv",
+                 locale=locale(encoding="ISO-8859-1")) |> 
+  select(-ends_with("F")) |> 
+  pivot_longer(cols=Y1961:Y2020,
+               names_to="annee",
+               values_to="Production_nourriture") |> 
+  mutate(annee=parse_number(annee)) |> 
+  filter(annee ==2020)
+
+
+food_country <-food |> 
+  filter(Element=="Production") |> 
+  filter(str_detect(Item,"Total")|str_detect(Item,"Primary")) |> 
+  rename(country=Area) |> 
+  rename(Area_code="Area Code")  |> 
+  mutate(Area_code=(as.factor(Area_code))) |> 
+  mutate(Area_code=countrycode(country, origin = "country.name", destination = "iso3c")) |> 
+  drop_na(Area_code) |> 
+  mutate(country=countrycode(Area_code, origin = "iso3c", destination = "country.name")) 
+
+
+#fusionner les données lat/long avec les données gapminder
+
+food_carte <- world_map |>
+  mutate(group=factor(group),
+         region=factor(region)) |> 
+  full_join(food_country,by="country")
+
+# carte choroplethe
+
+ggplot(food_carte)+
+  aes(long,lat,group=group)+
+  geom_polygon(aes(fill=Production_nourriture),colour="black")
+```
+
+

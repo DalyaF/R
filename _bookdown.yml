@@ -1,0 +1,9 @@
+book_filename: "series"
+language:
+  ui:
+    chapter_name: "Chapter "
+rmd_files: [
+  "index.Rmd",
+  "TP_live_live.Rmd"]
+delete_merged_file: true 
+output_dir: "docs"
