@@ -22,7 +22,7 @@ population<-read_excel("WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES_UN.xlsx", 
                names_to ="annee",
                values_to = "population") |>
   mutate(population=population*1000) |>
-  rename(region=3)
+  rename(region=3) 
 
 population_monde <-population |>
   filter(Type=="World") |>
@@ -165,6 +165,7 @@ ggplot(food_world)+
 
 
 # ANALYSE PAR CONTINENT
+
 ## POPULATION
 ```{r}
 # exploration des colonnes caractérisant la production
@@ -475,7 +476,7 @@ ggplot(energy_carte |>
   geom_polygon(aes(fill=consommation),colour="black")
 ```
 
-# Energie par sources 2
+## Energie par sources 
 
 
 ### Distribution de l'énergie d'origine nuclear par pays en 2015
