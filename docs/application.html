@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 APPLICATION | Analyse des données de la population, de la production de nourriture et de la consommation d’énergie</title>
+  <meta name="description" content="Chapter 4 APPLICATION | Analyse des données de la population, de la production de nourriture et de la consommation d’énergie" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 APPLICATION | Analyse des données de la population, de la production de nourriture et de la consommation d’énergie" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="openscapes/series" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 APPLICATION | Analyse des données de la population, de la production de nourriture et de la consommation d’énergie" />
+  
+  
+  
+
+<meta name="author" content="Dalya - Ikram" />
+
+
+<meta name="date" content="2022-07-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="analyse-par-continent.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="lib/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="lib/css/style.css" type="text/css" />
+<link rel="stylesheet" href="lib/css/lesson.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mini Bookdown Tutorial</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="analyse-mondiale.html"><a href="analyse-mondiale.html"><i class="fa fa-check"></i><b>2</b> ANALYSE MONDIALE</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="analyse-mondiale.html"><a href="analyse-mondiale.html#population"><i class="fa fa-check"></i><b>2.1</b> POPULATION</a></li>
+<li class="chapter" data-level="2.2" data-path="analyse-mondiale.html"><a href="analyse-mondiale.html#energie"><i class="fa fa-check"></i><b>2.2</b> ENERGIE</a></li>
+<li class="chapter" data-level="2.3" data-path="analyse-mondiale.html"><a href="analyse-mondiale.html#nourriture"><i class="fa fa-check"></i><b>2.3</b> NOURRITURE</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html"><i class="fa fa-check"></i><b>3</b> ANALYSE PAR CONTINENT</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#population-1"><i class="fa fa-check"></i><b>3.1</b> POPULATION</a></li>
+<li class="chapter" data-level="3.2" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#energie-1"><i class="fa fa-check"></i><b>3.2</b> ENERGIE</a></li>
+<li class="chapter" data-level="3.3" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#nourriture-1"><i class="fa fa-check"></i><b>3.3</b> NOURRITURE</a></li>
+<li class="chapter" data-level="3.4" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#population-2"><i class="fa fa-check"></i><b>3.4</b> POPULATION</a></li>
+<li class="chapter" data-level="3.5" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#energie-par-types"><i class="fa fa-check"></i><b>3.5</b> ENERGIE PAR TYPES</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#distribution-de-lénergie-de-type-fossil_fuel-par-pays-en-2015"><i class="fa fa-check"></i><b>3.5.1</b> Distribution de l’énergie de type fossil_fuel par pays en 2015</a></li>
+<li class="chapter" data-level="3.5.2" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#distribution-de-lénergie-dorigine-biofuel-par-pays-en-2015"><i class="fa fa-check"></i><b>3.5.2</b> Distribution de l’énergie d’origine biofuel par pays en 2015</a></li>
+<li class="chapter" data-level="3.5.3" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#distribution-de-lénergie-dorigine-charbone-par-pays-en-2015"><i class="fa fa-check"></i><b>3.5.3</b> Distribution de l’énergie d’origine charbone par pays en 2015</a></li>
+<li class="chapter" data-level="3.5.4" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#distribution-de-lénergie-dorigine-gaz-par-pays-en-2015"><i class="fa fa-check"></i><b>3.5.4</b> Distribution de l’énergie d’origine gaz par pays en 2015</a></li>
+<li class="chapter" data-level="3.5.5" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#distribution-de-lénergie-dorigine-hydro-par-pays-en-2015"><i class="fa fa-check"></i><b>3.5.5</b> Distribution de l’énergie d’origine hydro par pays en 2015</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#energie-par-sources"><i class="fa fa-check"></i><b>3.6</b> ENERGIE PAR SOURCES</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#distribution-de-lénergie-dorigine-nuclear-par-pays-en-2015"><i class="fa fa-check"></i><b>3.6.1</b> Distribution de l’énergie d’origine nuclear par pays en 2015</a></li>
+<li class="chapter" data-level="3.6.2" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#distribution-de-lénergie-dorigine-oil-par-pays-en-2015"><i class="fa fa-check"></i><b>3.6.2</b> Distribution de l’énergie d’origine oil par pays en 2015</a></li>
+<li class="chapter" data-level="3.6.3" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#distribution-de-lénergie-de-source-solar-par-pays-en-2015"><i class="fa fa-check"></i><b>3.6.3</b> Distribution de l’énergie de source solar par pays en 2015</a></li>
+<li class="chapter" data-level="3.6.4" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#distribution-de-lénergie-de-source-wind-par-pays-en-2015"><i class="fa fa-check"></i><b>3.6.4</b> Distribution de l’énergie de source wind par pays en 2015</a></li>
+<li class="chapter" data-level="3.6.5" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#distribution-de-lénergie-de-source-other_renewable_consumption-par-pays-en-2015"><i class="fa fa-check"></i><b>3.6.5</b> Distribution de l’énergie de source other_renewable_consumption par pays en 2015</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="analyse-par-continent.html"><a href="analyse-par-continent.html#nourriture-2"><i class="fa fa-check"></i><b>3.7</b> NOURRITURE</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="application.html"><a href="application.html"><i class="fa fa-check"></i><b>4</b> APPLICATION</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Analyse des données de la population, de la production de nourriture et de la consommation d’énergie</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="application" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> APPLICATION<a href="application.html#application" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="application.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::include_app(” https://dalyafuraiji.shinyapps.io/TP_test/“)</span></span>
+<span id="cb62-2"><a href="application.html#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="application.html#cb62-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb62-4"><a href="application.html#cb62-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-5"><a href="application.html#cb62-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-6"><a href="application.html#cb62-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-7"><a href="application.html#cb62-7" aria-hidden="true" tabindex="-1"></a>population<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">&quot;WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES_UN.xlsx&quot;</span>, <span class="at">skip =</span> <span class="dv">16</span>, <span class="at">na=</span><span class="st">&quot;...&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb62-8"><a href="application.html#cb62-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, Type,<span class="st">&quot;1950&quot;</span><span class="sc">:</span><span class="st">&quot;2020&quot;</span> )  <span class="sc">|&gt;</span></span>
+<span id="cb62-9"><a href="application.html#cb62-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Type<span class="sc">==</span><span class="st">&quot;Country/Area&quot;</span> <span class="sc">|</span> Type<span class="sc">==</span><span class="st">&quot;Region&quot;</span> <span class="sc">|</span> Type<span class="sc">==</span><span class="st">&quot;World&quot;</span>)<span class="sc">|&gt;</span></span>
+<span id="cb62-10"><a href="application.html#cb62-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">75</span>,</span>
+<span id="cb62-11"><a href="application.html#cb62-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span><span class="st">&quot;annee&quot;</span>,</span>
+<span id="cb62-12"><a href="application.html#cb62-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;population&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb62-13"><a href="application.html#cb62-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">population=</span>population<span class="sc">*</span><span class="dv">1000</span>) <span class="sc">|&gt;</span></span>
+<span id="cb62-14"><a href="application.html#cb62-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">region=</span><span class="dv">3</span>)</span>
+<span id="cb62-15"><a href="application.html#cb62-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-16"><a href="application.html#cb62-16" aria-hidden="true" tabindex="-1"></a>population_country<span class="ot">&lt;-</span>population <span class="sc">|&gt;</span></span>
+<span id="cb62-17"><a href="application.html#cb62-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(annee <span class="sc">&gt;=</span> <span class="dv">1961</span>) <span class="sc">|&gt;</span></span>
+<span id="cb62-18"><a href="application.html#cb62-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(annee, population, region,Type) <span class="sc">|&gt;</span></span>
+<span id="cb62-19"><a href="application.html#cb62-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country=</span><span class="fu">countrycode</span>(region, <span class="at">origin =</span> <span class="st">&quot;country.name&quot;</span>, <span class="at">destination =</span> <span class="st">&quot;country.name&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb62-20"><a href="application.html#cb62-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(country) <span class="sc">|&gt;</span></span>
+<span id="cb62-21"><a href="application.html#cb62-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">annee=</span>(<span class="fu">as.numeric</span>(annee)))</span></code></pre></div>
+<pre><code>## Warning in countrycode_convert(sourcevar = sourcevar, origin = origin, destination = dest, : Some values were not matched unambiguously: Africa, Asia, Europe, Latin America and the Caribbean, Northern America, Oceania, WORLD</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="application.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co">#la carte </span></span>
+<span id="cb64-2"><a href="application.html#cb64-2" aria-hidden="true" tabindex="-1"></a>world_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">&quot;world&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb64-3"><a href="application.html#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country=</span><span class="fu">countrycode</span>(region, <span class="at">origin =</span> <span class="st">&quot;country.name&quot;</span>, <span class="at">destination =</span> <span class="st">&quot;country.name&quot;</span>))</span></code></pre></div>
+<pre><code>## Warning in countrycode_convert(sourcevar = sourcevar, origin = origin, destination = dest, : Some values were not matched unambiguously: Ascension Island, Azores, Barbuda, Bonaire, Canary Islands, Chagos Archipelago, Grenadines, Heard Island, Madeira Islands, Micronesia, Saba, Saint Martin, Siachen Glacier, Sint Eustatius, Virgin Islands</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="application.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fusionner les données lat/long avec les données gapminder</span></span>
+<span id="cb66-2"><a href="application.html#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-3"><a href="application.html#cb66-3" aria-hidden="true" tabindex="-1"></a>population_carte <span class="ot">&lt;-</span> world_map <span class="sc">|&gt;</span></span>
+<span id="cb66-4"><a href="application.html#cb66-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group=</span><span class="fu">factor</span>(group),</span>
+<span id="cb66-5"><a href="application.html#cb66-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">region=</span><span class="fu">factor</span>(region)) <span class="sc">|&gt;</span> </span>
+<span id="cb66-6"><a href="application.html#cb66-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(population_country,<span class="at">by=</span><span class="st">&quot;country&quot;</span>)</span>
+<span id="cb66-7"><a href="application.html#cb66-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-8"><a href="application.html#cb66-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-9"><a href="application.html#cb66-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Partie food</span></span>
+<span id="cb66-10"><a href="application.html#cb66-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-11"><a href="application.html#cb66-11" aria-hidden="true" tabindex="-1"></a>food<span class="ot">&lt;-</span><span class="fu">read_delim</span>(<span class="st">&quot;Production_Crops_Livestock_E_All_Data.csv&quot;</span>,</span>
+<span id="cb66-12"><a href="application.html#cb66-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">locale=</span><span class="fu">locale</span>(<span class="at">encoding=</span><span class="st">&quot;ISO-8859-1&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb66-13"><a href="application.html#cb66-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">&quot;F&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb66-14"><a href="application.html#cb66-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols=</span>Y1961<span class="sc">:</span>Y2020,</span>
+<span id="cb66-15"><a href="application.html#cb66-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to=</span><span class="st">&quot;annee&quot;</span>,</span>
+<span id="cb66-16"><a href="application.html#cb66-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to=</span><span class="st">&quot;Production_nourriture&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb66-17"><a href="application.html#cb66-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">annee=</span><span class="fu">parse_number</span>(annee))</span></code></pre></div>
+<pre><code>## Rows: 77523 Columns: 127
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (64): Area, Item, Element, Unit, Y1961F, Y1962F, Y1963F, Y1964F, Y1965F,...
+## dbl (63): Area Code, Item Code, Element Code, Y1961, Y1962, Y1963, Y1964, Y1...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="application.html#cb68-1" aria-hidden="true" tabindex="-1"></a>food_country <span class="ot">&lt;-</span>food <span class="sc">|&gt;</span></span>
+<span id="cb68-2"><a href="application.html#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Element<span class="sc">==</span><span class="st">&quot;Production&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb68-3"><a href="application.html#cb68-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(Item,<span class="st">&quot;Total&quot;</span>)<span class="sc">|</span><span class="fu">str_detect</span>(Item,<span class="st">&quot;Primary&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb68-4"><a href="application.html#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">country=</span>Area) <span class="sc">|&gt;</span> </span>
+<span id="cb68-5"><a href="application.html#cb68-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">!=</span><span class="st">&quot;China&quot;</span>)</span>
+<span id="cb68-6"><a href="application.html#cb68-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-7"><a href="application.html#cb68-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-8"><a href="application.html#cb68-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-9"><a href="application.html#cb68-9" aria-hidden="true" tabindex="-1"></a>food_carte <span class="ot">&lt;-</span> world_map <span class="sc">|&gt;</span></span>
+<span id="cb68-10"><a href="application.html#cb68-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group=</span><span class="fu">factor</span>(group),</span>
+<span id="cb68-11"><a href="application.html#cb68-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">region=</span><span class="fu">factor</span>(region)) <span class="sc">|&gt;</span> </span>
+<span id="cb68-12"><a href="application.html#cb68-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(food_country,<span class="at">by=</span><span class="st">&quot;country&quot;</span>)</span>
+<span id="cb68-13"><a href="application.html#cb68-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-14"><a href="application.html#cb68-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-15"><a href="application.html#cb68-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-16"><a href="application.html#cb68-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Partie Energie</span></span>
+<span id="cb68-17"><a href="application.html#cb68-17" aria-hidden="true" tabindex="-1"></a>energy<span class="ot">&lt;-</span><span class="fu">read_delim</span>(<span class="st">&quot;owid-energy-data__OWID.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 17470 Columns: 124
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr   (2): iso_code, country
+## dbl (122): year, coal_prod_change_pct, coal_prod_change_twh, gas_prod_change...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="application.html#cb70-1" aria-hidden="true" tabindex="-1"></a>seqTp_energy <span class="ot">&lt;-</span> energy <span class="sc">|&gt;</span></span>
+<span id="cb70-2"><a href="application.html#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="fu">contains</span>(<span class="st">&quot;consumption&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb70-3"><a href="application.html#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1961</span> <span class="sc">&amp;</span> year <span class="sc">&lt;=</span> <span class="dv">2020</span>) <span class="sc">|&gt;</span></span>
+<span id="cb70-4"><a href="application.html#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols=</span><span class="dv">4</span><span class="sc">:</span><span class="dv">16</span>,</span>
+<span id="cb70-5"><a href="application.html#cb70-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to=</span><span class="st">&quot;type_energie&quot;</span>,</span>
+<span id="cb70-6"><a href="application.html#cb70-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to=</span><span class="st">&quot;consommation&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb70-7"><a href="application.html#cb70-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">types =</span> <span class="fu">case_when</span>(<span class="fu">str_detect</span>(type_energie,<span class="st">&quot;coal|gas|oil&quot;</span>)<span class="sc">~</span><span class="st">&quot;fossil_fuel_consumption&quot;</span>,</span>
+<span id="cb70-8"><a href="application.html#cb70-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">str_detect</span>(type_energie,<span class="st">&quot;nuclear|biofuel|hydro|other_renewable|solar|wind&quot;</span>)<span class="sc">~</span><span class="st">&quot;low_carbon_consumption&quot;</span>,</span>
+<span id="cb70-9"><a href="application.html#cb70-9" aria-hidden="true" tabindex="-1"></a>                           <span class="cn">TRUE</span><span class="sc">~</span><span class="cn">NA_character_</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb70-10"><a href="application.html#cb70-10" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">sources_energy =</span> <span class="fu">case_when</span>(<span class="fu">str_detect</span>(type_energie,<span class="st">&quot;biofuel&quot;</span>)<span class="sc">~</span><span class="st">&quot;biofuel&quot;</span>,</span>
+<span id="cb70-11"><a href="application.html#cb70-11" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">str_detect</span>(type_energie,<span class="st">&quot;coal&quot;</span>)<span class="sc">~</span><span class="st">&quot;coal&quot;</span>,</span>
+<span id="cb70-12"><a href="application.html#cb70-12" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">str_detect</span>(type_energie,<span class="st">&quot;wind&quot;</span>)<span class="sc">~</span><span class="st">&quot;wind&quot;</span>,</span>
+<span id="cb70-13"><a href="application.html#cb70-13" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">str_detect</span>(type_energie,<span class="st">&quot;gas&quot;</span>)<span class="sc">~</span><span class="st">&quot;gas&quot;</span>,</span>
+<span id="cb70-14"><a href="application.html#cb70-14" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">str_detect</span>(type_energie,<span class="st">&quot;hydro&quot;</span>)<span class="sc">~</span><span class="st">&quot;hydro&quot;</span>,</span>
+<span id="cb70-15"><a href="application.html#cb70-15" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">str_detect</span>(type_energie,<span class="st">&quot;solar&quot;</span>)<span class="sc">~</span><span class="st">&quot;solar&quot;</span>,</span>
+<span id="cb70-16"><a href="application.html#cb70-16" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">str_detect</span>(type_energie,<span class="st">&quot;nuclear&quot;</span>)<span class="sc">~</span><span class="st">&quot;nuclear&quot;</span>,</span>
+<span id="cb70-17"><a href="application.html#cb70-17" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">str_detect</span>(type_energie,<span class="st">&quot;oil&quot;</span>)<span class="sc">~</span><span class="st">&quot;oil&quot;</span>,</span>
+<span id="cb70-18"><a href="application.html#cb70-18" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">str_detect</span>(type_energie,<span class="st">&quot;other_renewable&quot;</span>)<span class="sc">~</span><span class="st">&quot;other_renewable_consumption&quot;</span></span>
+<span id="cb70-19"><a href="application.html#cb70-19" aria-hidden="true" tabindex="-1"></a>                                    ))</span>
+<span id="cb70-20"><a href="application.html#cb70-20" aria-hidden="true" tabindex="-1"></a>energy_country<span class="ot">&lt;-</span> seqTp_energy <span class="sc">|&gt;</span></span>
+<span id="cb70-21"><a href="application.html#cb70-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">annee=</span><span class="st">&quot;year&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb70-22"><a href="application.html#cb70-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">annee=</span>(<span class="fu">as.numeric</span>(annee))) <span class="sc">|&gt;</span></span>
+<span id="cb70-23"><a href="application.html#cb70-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(types)</span>
+<span id="cb70-24"><a href="application.html#cb70-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-25"><a href="application.html#cb70-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-26"><a href="application.html#cb70-26" aria-hidden="true" tabindex="-1"></a>energy_carte <span class="ot">&lt;-</span> world_map <span class="sc">|&gt;</span></span>
+<span id="cb70-27"><a href="application.html#cb70-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group=</span><span class="fu">factor</span>(group),</span>
+<span id="cb70-28"><a href="application.html#cb70-28" aria-hidden="true" tabindex="-1"></a>         <span class="at">region=</span><span class="fu">factor</span>(region)) <span class="sc">|&gt;</span> </span>
+<span id="cb70-29"><a href="application.html#cb70-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(energy_country,<span class="at">by=</span><span class="st">&quot;country&quot;</span>)</span>
+<span id="cb70-30"><a href="application.html#cb70-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-31"><a href="application.html#cb70-31" aria-hidden="true" tabindex="-1"></a><span class="co"># carte choroplethe</span></span>
+<span id="cb70-32"><a href="application.html#cb70-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-33"><a href="application.html#cb70-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-34"><a href="application.html#cb70-34" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb70-35"><a href="application.html#cb70-35" aria-hidden="true" tabindex="-1"></a>   <span class="fu">titlePanel</span>(<span class="st">&quot;Evolution de la population par pays depuis (1961 - 2020)&quot;</span>),</span>
+<span id="cb70-36"><a href="application.html#cb70-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarLayout</span>(</span>
+<span id="cb70-37"><a href="application.html#cb70-37" aria-hidden="true" tabindex="-1"></a>   <span class="fu">sidebarPanel</span>(</span>
+<span id="cb70-38"><a href="application.html#cb70-38" aria-hidden="true" tabindex="-1"></a>      <span class="fu">selectInput</span>(<span class="at">inputId=</span><span class="st">&quot;PAYS&quot;</span>,</span>
+<span id="cb70-39"><a href="application.html#cb70-39" aria-hidden="true" tabindex="-1"></a>                  <span class="at">label=</span><span class="st">&quot;Choisissez un pays&quot;</span>,</span>
+<span id="cb70-40"><a href="application.html#cb70-40" aria-hidden="true" tabindex="-1"></a>                   <span class="at">choices=</span>population_country <span class="sc">|&gt;</span></span>
+<span id="cb70-41"><a href="application.html#cb70-41" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">distinct</span>(country) <span class="sc">|&gt;</span></span>
+<span id="cb70-42"><a href="application.html#cb70-42" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">arrange</span>(country) <span class="sc">|&gt;</span></span>
+<span id="cb70-43"><a href="application.html#cb70-43" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">pull</span>()</span>
+<span id="cb70-44"><a href="application.html#cb70-44" aria-hidden="true" tabindex="-1"></a>       ),</span>
+<span id="cb70-45"><a href="application.html#cb70-45" aria-hidden="true" tabindex="-1"></a>      <span class="fu">selectInput</span>(<span class="at">inputId=</span><span class="st">&quot;ANNEE&quot;</span>,</span>
+<span id="cb70-46"><a href="application.html#cb70-46" aria-hidden="true" tabindex="-1"></a>                  <span class="at">label=</span><span class="st">&quot;Choisissez une annee&quot;</span>,</span>
+<span id="cb70-47"><a href="application.html#cb70-47" aria-hidden="true" tabindex="-1"></a>                   <span class="at">choices=</span>population_country <span class="sc">|&gt;</span></span>
+<span id="cb70-48"><a href="application.html#cb70-48" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">distinct</span>(annee) <span class="sc">|&gt;</span></span>
+<span id="cb70-49"><a href="application.html#cb70-49" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">arrange</span>(annee) <span class="sc">|&gt;</span></span>
+<span id="cb70-50"><a href="application.html#cb70-50" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">pull</span>()</span>
+<span id="cb70-51"><a href="application.html#cb70-51" aria-hidden="true" tabindex="-1"></a>       )</span>
+<span id="cb70-52"><a href="application.html#cb70-52" aria-hidden="true" tabindex="-1"></a>     ),</span>
+<span id="cb70-53"><a href="application.html#cb70-53" aria-hidden="true" tabindex="-1"></a>     <span class="fu">mainPanel</span>(</span>
+<span id="cb70-54"><a href="application.html#cb70-54" aria-hidden="true" tabindex="-1"></a>       <span class="fu">column</span>(<span class="at">width=</span><span class="dv">4</span>,</span>
+<span id="cb70-55"><a href="application.html#cb70-55" aria-hidden="true" tabindex="-1"></a>              <span class="fu">wellPanel</span>(</span>
+<span id="cb70-56"><a href="application.html#cb70-56" aria-hidden="true" tabindex="-1"></a>                <span class="fu">titlePanel</span>(<span class="st">&quot;Evolution de la nourriture&quot;</span>),</span>
+<span id="cb70-57"><a href="application.html#cb70-57" aria-hidden="true" tabindex="-1"></a>                <span class="fu">plotOutput</span>(<span class="at">outputId=</span><span class="st">&quot;GRAPHIQUEN&quot;</span>)</span>
+<span id="cb70-58"><a href="application.html#cb70-58" aria-hidden="true" tabindex="-1"></a>              )</span>
+<span id="cb70-59"><a href="application.html#cb70-59" aria-hidden="true" tabindex="-1"></a>       ),</span>
+<span id="cb70-60"><a href="application.html#cb70-60" aria-hidden="true" tabindex="-1"></a>       <span class="fu">column</span>(<span class="at">width=</span><span class="dv">4</span>,</span>
+<span id="cb70-61"><a href="application.html#cb70-61" aria-hidden="true" tabindex="-1"></a>              <span class="fu">wellPanel</span>(</span>
+<span id="cb70-62"><a href="application.html#cb70-62" aria-hidden="true" tabindex="-1"></a>                <span class="fu">titlePanel</span>(<span class="st">&quot;Evolution de la population&quot;</span>),</span>
+<span id="cb70-63"><a href="application.html#cb70-63" aria-hidden="true" tabindex="-1"></a>                <span class="fu">plotOutput</span>(<span class="at">outputId=</span><span class="st">&quot;GRAPHIQUEP&quot;</span>)</span>
+<span id="cb70-64"><a href="application.html#cb70-64" aria-hidden="true" tabindex="-1"></a>              )</span>
+<span id="cb70-65"><a href="application.html#cb70-65" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb70-66"><a href="application.html#cb70-66" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(<span class="at">width=</span><span class="dv">4</span>,</span>
+<span id="cb70-67"><a href="application.html#cb70-67" aria-hidden="true" tabindex="-1"></a>              <span class="fu">wellPanel</span>(</span>
+<span id="cb70-68"><a href="application.html#cb70-68" aria-hidden="true" tabindex="-1"></a>                <span class="fu">titlePanel</span>(<span class="st">&quot;Evolution de l&#39;energie&quot;</span>),</span>
+<span id="cb70-69"><a href="application.html#cb70-69" aria-hidden="true" tabindex="-1"></a>                <span class="fu">plotOutput</span>(<span class="at">outputId=</span><span class="st">&quot;GRAPHIQUEE&quot;</span>)</span>
+<span id="cb70-70"><a href="application.html#cb70-70" aria-hidden="true" tabindex="-1"></a>              )</span>
+<span id="cb70-71"><a href="application.html#cb70-71" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb70-72"><a href="application.html#cb70-72" aria-hidden="true" tabindex="-1"></a>       <span class="fu">mainPanel</span>(</span>
+<span id="cb70-73"><a href="application.html#cb70-73" aria-hidden="true" tabindex="-1"></a>         <span class="fu">column</span>(<span class="at">width=</span><span class="dv">10</span>,</span>
+<span id="cb70-74"><a href="application.html#cb70-74" aria-hidden="true" tabindex="-1"></a>             <span class="fu">wellPanel</span>(</span>
+<span id="cb70-75"><a href="application.html#cb70-75" aria-hidden="true" tabindex="-1"></a>               <span class="fu">titlePanel</span>(<span class="st">&quot;Carte population&quot;</span>),</span>
+<span id="cb70-76"><a href="application.html#cb70-76" aria-hidden="true" tabindex="-1"></a>               <span class="fu">plotOutput</span>(<span class="at">outputId=</span><span class="st">&quot;GRAPHIQUEPP&quot;</span>)</span>
+<span id="cb70-77"><a href="application.html#cb70-77" aria-hidden="true" tabindex="-1"></a>             )</span>
+<span id="cb70-78"><a href="application.html#cb70-78" aria-hidden="true" tabindex="-1"></a>       )</span>
+<span id="cb70-79"><a href="application.html#cb70-79" aria-hidden="true" tabindex="-1"></a>       ),</span>
+<span id="cb70-80"><a href="application.html#cb70-80" aria-hidden="true" tabindex="-1"></a>       <span class="fu">mainPanel</span>(</span>
+<span id="cb70-81"><a href="application.html#cb70-81" aria-hidden="true" tabindex="-1"></a>         <span class="fu">column</span>(<span class="at">width=</span><span class="dv">10</span>,</span>
+<span id="cb70-82"><a href="application.html#cb70-82" aria-hidden="true" tabindex="-1"></a>             <span class="fu">wellPanel</span>(</span>
+<span id="cb70-83"><a href="application.html#cb70-83" aria-hidden="true" tabindex="-1"></a>               <span class="fu">titlePanel</span>(<span class="st">&quot;Carte Nourriture&quot;</span>),</span>
+<span id="cb70-84"><a href="application.html#cb70-84" aria-hidden="true" tabindex="-1"></a>               <span class="fu">plotOutput</span>(<span class="at">outputId=</span><span class="st">&quot;GRAPHIQUENN&quot;</span>)</span>
+<span id="cb70-85"><a href="application.html#cb70-85" aria-hidden="true" tabindex="-1"></a>             )</span>
+<span id="cb70-86"><a href="application.html#cb70-86" aria-hidden="true" tabindex="-1"></a>       )</span>
+<span id="cb70-87"><a href="application.html#cb70-87" aria-hidden="true" tabindex="-1"></a>       ),</span>
+<span id="cb70-88"><a href="application.html#cb70-88" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mainPanel</span>(</span>
+<span id="cb70-89"><a href="application.html#cb70-89" aria-hidden="true" tabindex="-1"></a>         <span class="fu">column</span>(<span class="at">width=</span><span class="dv">10</span>,</span>
+<span id="cb70-90"><a href="application.html#cb70-90" aria-hidden="true" tabindex="-1"></a>             <span class="fu">wellPanel</span>(</span>
+<span id="cb70-91"><a href="application.html#cb70-91" aria-hidden="true" tabindex="-1"></a>               <span class="fu">titlePanel</span>(<span class="st">&quot;Carte Energie type fossil&quot;</span>),</span>
+<span id="cb70-92"><a href="application.html#cb70-92" aria-hidden="true" tabindex="-1"></a>               <span class="fu">plotOutput</span>(<span class="at">outputId=</span><span class="st">&quot;GRAPHIQUEEE&quot;</span>)</span>
+<span id="cb70-93"><a href="application.html#cb70-93" aria-hidden="true" tabindex="-1"></a>             )</span>
+<span id="cb70-94"><a href="application.html#cb70-94" aria-hidden="true" tabindex="-1"></a>       )</span>
+<span id="cb70-95"><a href="application.html#cb70-95" aria-hidden="true" tabindex="-1"></a>       ),</span>
+<span id="cb70-96"><a href="application.html#cb70-96" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mainPanel</span>(</span>
+<span id="cb70-97"><a href="application.html#cb70-97" aria-hidden="true" tabindex="-1"></a>         <span class="fu">column</span>(<span class="at">width=</span><span class="dv">10</span>,</span>
+<span id="cb70-98"><a href="application.html#cb70-98" aria-hidden="true" tabindex="-1"></a>             <span class="fu">wellPanel</span>(</span>
+<span id="cb70-99"><a href="application.html#cb70-99" aria-hidden="true" tabindex="-1"></a>               <span class="fu">titlePanel</span>(<span class="st">&quot;Carte Energie type low-carbon&quot;</span>),</span>
+<span id="cb70-100"><a href="application.html#cb70-100" aria-hidden="true" tabindex="-1"></a>               <span class="fu">plotOutput</span>(<span class="at">outputId=</span><span class="st">&quot;GRAPHIQUEEE2&quot;</span>)</span>
+<span id="cb70-101"><a href="application.html#cb70-101" aria-hidden="true" tabindex="-1"></a>             )</span>
+<span id="cb70-102"><a href="application.html#cb70-102" aria-hidden="true" tabindex="-1"></a>       )</span>
+<span id="cb70-103"><a href="application.html#cb70-103" aria-hidden="true" tabindex="-1"></a>       )</span>
+<span id="cb70-104"><a href="application.html#cb70-104" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb70-105"><a href="application.html#cb70-105" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb70-106"><a href="application.html#cb70-106" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb70-107"><a href="application.html#cb70-107" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb70-108"><a href="application.html#cb70-108" aria-hidden="true" tabindex="-1"></a>  filtre<span class="ot">&lt;-</span><span class="fu">reactive</span>({</span>
+<span id="cb70-109"><a href="application.html#cb70-109" aria-hidden="true" tabindex="-1"></a>    population_country <span class="sc">|&gt;</span></span>
+<span id="cb70-110"><a href="application.html#cb70-110" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(country<span class="sc">==</span>input<span class="sc">$</span>PAYS )</span>
+<span id="cb70-111"><a href="application.html#cb70-111" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb70-112"><a href="application.html#cb70-112" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>GRAPHIQUEP<span class="ot">&lt;-</span><span class="fu">renderPlot</span>({</span>
+<span id="cb70-113"><a href="application.html#cb70-113" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ggplot</span>(<span class="fu">filtre</span>())<span class="sc">+</span></span>
+<span id="cb70-114"><a href="application.html#cb70-114" aria-hidden="true" tabindex="-1"></a>      <span class="fu">aes</span>(annee, population , <span class="at">fill=</span>country)<span class="sc">+</span></span>
+<span id="cb70-115"><a href="application.html#cb70-115" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_col</span>()</span>
+<span id="cb70-116"><a href="application.html#cb70-116" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb70-117"><a href="application.html#cb70-117" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb70-118"><a href="application.html#cb70-118" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>GRAPHIQUEN<span class="ot">&lt;-</span><span class="fu">renderPlot</span>({</span>
+<span id="cb70-119"><a href="application.html#cb70-119" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ggplot</span>(food_country <span class="sc">|&gt;</span></span>
+<span id="cb70-120"><a href="application.html#cb70-120" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(country<span class="sc">==</span>input<span class="sc">$</span>PAYS))<span class="sc">+</span></span>
+<span id="cb70-121"><a href="application.html#cb70-121" aria-hidden="true" tabindex="-1"></a>      <span class="fu">aes</span>(annee, Production_nourriture, <span class="at">fill=</span>country)<span class="sc">+</span></span>
+<span id="cb70-122"><a href="application.html#cb70-122" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_col</span>()<span class="sc">+</span></span>
+<span id="cb70-123"><a href="application.html#cb70-123" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Annee&quot;</span>, <span class="at">y=</span><span class="st">&quot;Production de norriture (tonnes)&quot;</span>)<span class="sc">+</span></span>
+<span id="cb70-124"><a href="application.html#cb70-124" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,</span>
+<span id="cb70-125"><a href="application.html#cb70-125" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">angle=</span><span class="dv">45</span>,</span>
+<span id="cb70-126"><a href="application.html#cb70-126" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">hjust=</span><span class="dv">1</span>,</span>
+<span id="cb70-127"><a href="application.html#cb70-127" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">vjust=</span><span class="dv">1</span>),</span>
+<span id="cb70-128"><a href="application.html#cb70-128" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,</span>
+<span id="cb70-129"><a href="application.html#cb70-129" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">hjust=</span><span class="dv">1</span>,</span>
+<span id="cb70-130"><a href="application.html#cb70-130" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">vjust=</span><span class="dv">1</span>),</span>
+<span id="cb70-131"><a href="application.html#cb70-131" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text.x=</span><span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;black&quot;</span>,</span>
+<span id="cb70-132"><a href="application.html#cb70-132" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb70-133"><a href="application.html#cb70-133" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>),</span>
+<span id="cb70-134"><a href="application.html#cb70-134" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span>
+<span id="cb70-135"><a href="application.html#cb70-135" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb70-136"><a href="application.html#cb70-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-137"><a href="application.html#cb70-137" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>GRAPHIQUEE<span class="ot">&lt;-</span><span class="fu">renderPlot</span>({</span>
+<span id="cb70-138"><a href="application.html#cb70-138" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ggplot</span>(energy_country <span class="sc">|&gt;</span></span>
+<span id="cb70-139"><a href="application.html#cb70-139" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(country <span class="sc">==</span> input<span class="sc">$</span>PAYS ))<span class="sc">+</span></span>
+<span id="cb70-140"><a href="application.html#cb70-140" aria-hidden="true" tabindex="-1"></a>      <span class="fu">aes</span>(annee,consommation, <span class="at">fill=</span>country)<span class="sc">+</span></span>
+<span id="cb70-141"><a href="application.html#cb70-141" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_col</span>()<span class="sc">+</span></span>
+<span id="cb70-142"><a href="application.html#cb70-142" aria-hidden="true" tabindex="-1"></a>        <span class="fu">facet_grid</span>(<span class="sc">~</span>types)<span class="sc">+</span></span>
+<span id="cb70-143"><a href="application.html#cb70-143" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Annee&quot;</span>, <span class="at">y=</span><span class="st">&quot;Consommation (TWh)&quot;</span>)<span class="sc">+</span></span>
+<span id="cb70-144"><a href="application.html#cb70-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>,</span>
+<span id="cb70-145"><a href="application.html#cb70-145" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">angle=</span><span class="dv">45</span>,</span>
+<span id="cb70-146"><a href="application.html#cb70-146" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">hjust=</span><span class="dv">1</span>,</span>
+<span id="cb70-147"><a href="application.html#cb70-147" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">vjust=</span><span class="dv">1</span>),</span>
+<span id="cb70-148"><a href="application.html#cb70-148" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>,</span>
+<span id="cb70-149"><a href="application.html#cb70-149" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">hjust=</span><span class="dv">1</span>,</span>
+<span id="cb70-150"><a href="application.html#cb70-150" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">vjust=</span><span class="dv">1</span>),</span>
+<span id="cb70-151"><a href="application.html#cb70-151" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text.x=</span><span class="fu">element_text</span>(<span class="at">colour=</span><span class="st">&quot;black&quot;</span>,</span>
+<span id="cb70-152"><a href="application.html#cb70-152" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb70-153"><a href="application.html#cb70-153" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>),</span>
+<span id="cb70-154"><a href="application.html#cb70-154" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))</span>
+<span id="cb70-155"><a href="application.html#cb70-155" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb70-156"><a href="application.html#cb70-156" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb70-157"><a href="application.html#cb70-157" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>GRAPHIQUEPP <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb70-158"><a href="application.html#cb70-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-159"><a href="application.html#cb70-159" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ggplot</span>(population_carte <span class="sc">|&gt;</span> </span>
+<span id="cb70-160"><a href="application.html#cb70-160" aria-hidden="true" tabindex="-1"></a>              <span class="fu">filter</span>(annee <span class="sc">==</span> input<span class="sc">$</span>ANNEE ))<span class="sc">+</span></span>
+<span id="cb70-161"><a href="application.html#cb70-161" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(long,lat,<span class="at">group=</span>group)<span class="sc">+</span></span>
+<span id="cb70-162"><a href="application.html#cb70-162" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill=</span>population),<span class="at">colour=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb70-163"><a href="application.html#cb70-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-164"><a href="application.html#cb70-164" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb70-165"><a href="application.html#cb70-165" aria-hidden="true" tabindex="-1"></a>     output<span class="sc">$</span>GRAPHIQUENN <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb70-166"><a href="application.html#cb70-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-167"><a href="application.html#cb70-167" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ggplot</span>(food_carte<span class="sc">|&gt;</span> </span>
+<span id="cb70-168"><a href="application.html#cb70-168" aria-hidden="true" tabindex="-1"></a>              <span class="fu">filter</span>(annee <span class="sc">==</span> input<span class="sc">$</span>ANNEE ))<span class="sc">+</span></span>
+<span id="cb70-169"><a href="application.html#cb70-169" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(long,lat,<span class="at">group=</span>group)<span class="sc">+</span></span>
+<span id="cb70-170"><a href="application.html#cb70-170" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill=</span>Production_nourriture),<span class="at">colour=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb70-171"><a href="application.html#cb70-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-172"><a href="application.html#cb70-172" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb70-173"><a href="application.html#cb70-173" aria-hidden="true" tabindex="-1"></a>     output<span class="sc">$</span>GRAPHIQUEEE <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb70-174"><a href="application.html#cb70-174" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ggplot</span>(energy_carte <span class="sc">|&gt;</span> </span>
+<span id="cb70-175"><a href="application.html#cb70-175" aria-hidden="true" tabindex="-1"></a>              <span class="fu">filter</span>(annee <span class="sc">==</span> input<span class="sc">$</span>ANNEE ) <span class="sc">|&gt;</span> </span>
+<span id="cb70-176"><a href="application.html#cb70-176" aria-hidden="true" tabindex="-1"></a>              <span class="fu">filter</span>(types <span class="sc">==</span><span class="st">&quot;fossil_fuel_consumption&quot;</span>) )<span class="sc">+</span></span>
+<span id="cb70-177"><a href="application.html#cb70-177" aria-hidden="true" tabindex="-1"></a>           </span>
+<span id="cb70-178"><a href="application.html#cb70-178" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(long,lat,<span class="at">group=</span>group)<span class="sc">+</span></span>
+<span id="cb70-179"><a href="application.html#cb70-179" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill=</span>consommation),<span class="at">colour=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb70-180"><a href="application.html#cb70-180" aria-hidden="true" tabindex="-1"></a>     }</span>
+<span id="cb70-181"><a href="application.html#cb70-181" aria-hidden="true" tabindex="-1"></a>       </span>
+<span id="cb70-182"><a href="application.html#cb70-182" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb70-183"><a href="application.html#cb70-183" aria-hidden="true" tabindex="-1"></a>      output<span class="sc">$</span>GRAPHIQUEEE2 <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb70-184"><a href="application.html#cb70-184" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ggplot</span>(energy_carte <span class="sc">|&gt;</span> </span>
+<span id="cb70-185"><a href="application.html#cb70-185" aria-hidden="true" tabindex="-1"></a>              <span class="fu">filter</span>(annee <span class="sc">==</span> input<span class="sc">$</span>ANNEE ) <span class="sc">|&gt;</span> </span>
+<span id="cb70-186"><a href="application.html#cb70-186" aria-hidden="true" tabindex="-1"></a>              <span class="fu">filter</span>(types <span class="sc">==</span><span class="st">&quot;low_carbon_consumption&quot;</span>) )<span class="sc">+</span></span>
+<span id="cb70-187"><a href="application.html#cb70-187" aria-hidden="true" tabindex="-1"></a>           </span>
+<span id="cb70-188"><a href="application.html#cb70-188" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(long,lat,<span class="at">group=</span>group)<span class="sc">+</span></span>
+<span id="cb70-189"><a href="application.html#cb70-189" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill=</span>consommation),<span class="at">colour=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb70-190"><a href="application.html#cb70-190" aria-hidden="true" tabindex="-1"></a>     }</span>
+<span id="cb70-191"><a href="application.html#cb70-191" aria-hidden="true" tabindex="-1"></a>       </span>
+<span id="cb70-192"><a href="application.html#cb70-192" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb70-193"><a href="application.html#cb70-193" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb70-194"><a href="application.html#cb70-194" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb70-195"><a href="application.html#cb70-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-196"><a href="application.html#cb70-196" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span></code></pre></div>
+<pre><code>## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.</code></pre>
+<p><div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div></p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="analyse-par-continent.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jules32/bookdown-tutorial/edit/master/TP_live_live.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["series.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
